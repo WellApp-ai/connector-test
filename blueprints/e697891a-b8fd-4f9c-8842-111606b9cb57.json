@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.amazon.fr/",
+    "action": "find-invoice",
+    "querySelector": "#nav-link-accountList-nav-line-1"
+  },
+  {
+    "id": 3,
+    "url": "https://www.amazon.fr/order",
+    "action": "download-invoice",
+    "querySelector": "#selector-invoice"
+  },
+  {
+    "id": 3,
+    "url": "https://www.amazon.fr/order",
+    "action": "download-invoice",
+    "querySelector": "#selector-invoice"
+  },
+  {
+    "id": 35,
+    "url": "https://www.amazon.fr/order",
+    "action": "download-invoice",
+    "querySelector": "#selector-invoice"
+  }
+]
