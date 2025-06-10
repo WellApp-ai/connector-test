@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "url": "https://dashboard.stripe.com/login",
+    "action": "navigate",
+    "querySelector": "body"
+  },
+  {
+    "id": 2,
+    "url": "https://stripe.com/dashboard",
+    "action": "click",
+    "querySelector": "#submit"
+  }
+]
