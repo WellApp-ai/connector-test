@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.amazon.fr/",
+    "action": "find-invoice",
+    "screenshot": "",
+    "querySelector": "#nav-link-accountList-nav-line-1"
+  },
+  {
+    "id": 2,
+    "url": "https://www.amazon.fr/gp/your-account/order-history?ref_=ya_d_c_yo",
+    "action": "find-invoice",
+    "screenshot": "",
+    "querySelector": "#a-page > div.a-container > div > ul:nth-child(3) > li:nth-child(1) > span > span > a > div > div > div > div.a-column.a-span9.a-span-last > h2"
+  }
+]
