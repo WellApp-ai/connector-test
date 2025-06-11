@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.amazon.fr/",
+    "action": "find-invoice",
+    "querySelector": "#nav-link-accountList-nav-line-1"
+  }
+]
