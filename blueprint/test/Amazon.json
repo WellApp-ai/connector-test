@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.amazon.fr/",
+    "action": "find-invoice",
+    "screenshot": "",
+    "querySelector": "#nav-link-accountList-nav-line-1"
+  },
+  {
+    "id": 2,
+    "url": "https://www.amazon.com/gp/css/homepage.html?ref_=nav_youraccount_btn",
+    "action": "download-invoice",
+    "manual": true,
+    "screenshot": "",
+    "querySelector": "div.a-section.ya-personalized"
+  }
+]
