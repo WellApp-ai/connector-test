@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.amazon.fr/ap/signin",
+    "action": "download-invoice",
+    "manual": true,
+    "screenshot": "",
+    "querySelector": "div#ap_error_page_message.ap_error_page_message"
+  }
+]
