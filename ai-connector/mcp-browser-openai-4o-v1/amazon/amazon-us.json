@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "mcpVersion": "mcp-browser-openai-4o-v1",
+    "created_at": "2025-08-08T14:24:17.070Z",
+    "updated_at": "2025-08-08T14:24:17.070Z",
+    "country": [
+      "US"
+    ]
+  },
+  "data": {
+    "type": "blueprint",
+    "id": "0b12e35f-e2e4-4517-88aa-13bca4445172",
+    "attributes": {
+      "encrypted": {
+        "iv": "69f316062bacbd3d45415bb1eaff8c5e",
+        "content": "57c535501c3be97b250bde2d3947af4295bd1b4467528bd62e72a640aa41cdbab1a8a6a8787e41309588c65923d3170b54de23c2d1d800831d82645366189cf846100d59d944ce71158ef85b34e4501dd175bb1344b733da42e5da4df30c1aece9a16b8c138ec494ecb56abefe7247c9f4cf08d8f0d539f2830c89757e41da104f8bac85dd7b9cd43d576acac08a6b97236eeedb6d4b265d3f1173ae1e54a1433fd7eefcea4ae2aa39a0723863685751b1ce310eb33755f9e8f4e8ffe1e9f7a9de9952e5f283d1f85238fe15cf47cf8e4b1f5f9411057a2442d97aa612ebf6a4424fed79f468e3f1d841197a79570b4227043ddde437d9394ea62dcad24dc630b1d3ff12679ac3a7c237b35644e767a3e527a1c36d3d1f8c239aeb0176c513b1c703d1e0b634b21380440ba3c3c3227d027346a7e18a6131b1a2cf54b4acaaf353acc05453520f22664f7d7e6d112e08"
+      }
+    }
+  }
+}
