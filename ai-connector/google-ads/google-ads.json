@@ -32,7 +32,7 @@
               "action": "waitForNetworkIdle"
             },
             {
-              "action": "findPdf",
+              "action": "getPdf",
               "outputVariable": "new_pdfs",
               "attributeName": "data-url"
             },
