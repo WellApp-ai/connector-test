@@ -12,10 +12,40 @@
     "type": "blueprint",
     "id": "7dbe53d4-f72b-45f8-bb3b-0e839e33e342",
     "attributes": {
-      "encrypted": {
-        "iv": "69f316062bacbd3d45415bb1eaff8c5e",
-        "content": "57c535501c3be97b250bde2d3947af4295bd1b4467528bd62e72a640aa41cdbab1a8a6a8787e41309588c65923d3170b54de23c2d1d800831d82645366189cf846100d59d944ce71158ef85b34e4501dd175bb1344b733da42e5da4df30c1aece9a16b8c138ec494ecb56abefe7247c9b7a6061c85ca60754453032f50bf9dfbec02eeaa6c77abb8b4d2814766ae288edb7a201785d75b4a73f87d4ddfd17be1192f9f5de7acc130d865cd5fa33c6cee4294482a9d267e0a438ea3644a9357b1b0e96e78fa4d6633a3de4c2b3dd5a66654e84d77b51862f5312608b73281a3c3121f2a264c0e034eae18d96a1666bbaa970dd6bb71b7bf79daff9d976035469307d08af9b604aa699d0a5f8cc217ea4024b49b1a973e92d2febc553aa785517fe36c51b5a553a46b951b20654499daa76f02d71c7ae1aaf6f44ae0e0097f052e99d41a3e62a8029216ee16ce1dbca611d8fc7478230bb53846bcf4415add589f6e38ca5ef20bea7097c466fd394bb451d99ddcfc63aff6246a976241a638668762aca9fbd6b940be19df1d256d56a600ba1f423f8a7f968e67e6e75840b4c340b428becf09d0c4eed1c19c528b1329701dc5c03a25cecabf145ffe3acbbea47e6de333fa12c54ed453ddaee187703f05d1b0dc48185af743d328eb2821ec902e73345809f9391e995ba231ab994802d6f16bd2406ae8ae558b2ab6053bfcdb05e8ba92754e1e2233cec068019cfde417e6c4cc44e9f800e50b17d126a845879234e6be0fa68e6aecc9a58125ce9b616489e7c48e470bc974ee270508e5a31ce66c8c8475f8233e8c6895739c4502ce79b5669ad213962e36fd67e5772eed12f421ae3b3074acf13d446f57d51984ee508db66a27210c0fd5528d8ad94f87d9568b5c73b738309853743ea3d5deb3871f0c7727cc3103d990c1cfccb8309a3f9a"
-      }
+      "getDocuments": [
+        {
+          "action": "goToUrl",
+          "url": "https://www.amazon.fr/gp/css/order-history"
+        },
+        {
+          "action": "forEach",
+          "id": "invoice-links-loop",
+          "on": {
+            "querySelector": "a[href*='/invoice']"
+          },
+          "steps": [
+            {
+              "action": "click"
+            },
+            {
+              "action": "waitForNetworkIdle"
+            },
+            {
+              "action": "findPdfs",
+              "outputVariable": "new_pdfs"
+            },
+            {
+              "action": "mergeVariables",
+              "inputVariable": "new_pdfs",
+              "outputVariable": "all_pdfs"
+            }
+          ]
+        },
+        {
+          "action": "downloadPdfsFromUrls",
+          "inputVariable": "all_pdfs"
+        }
+      ]
     }
   }
 }

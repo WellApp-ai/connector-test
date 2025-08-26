@@ -12,10 +12,34 @@
     "type": "blueprint",
     "id": "75a1b8f6-6fcb-4a03-8cc3-659625361310",
     "attributes": {
-      "encrypted": {
-        "iv": "69f316062bacbd3d45415bb1eaff8c5e",
-        "content": "57c535501c3be97b250bde2d3947af4295bd1b4467528bd62e72a640aa41cdba7f34a033e83fc89e2b1a3365b41a29c13e9de923173360a4e69cf7c9924544b86ef637d168de7f24304e2e1653101b0bec4d193f2c2decbc037568a700563a334551ff21641f07de1bf5aea46bb3d13e3c1fc1e90fc566b7c1d167175c7d93d0fdf969ca2280ee8e9d917dd63bf731478c7a4a9aa55efbd18fba39defd3b313cb8a4b99f38bc6bc5bdc54f25c4220d3aa17afad16bf5ac7a6ed5fa65e61c0587f06fc8511b4d11c28b6e91ea66d2d0f3a23602a5792b97310baad9ed3d37dd34681f6fbc4b5aafc8000388c744679992207a87388b285e9882f67b8da7db575aadf2b89ed77f1ba12f767ad6a5e0832f1bbc5f907b678fcab496d8d53f4ec5c8aa8961aa50785d655586220c7d8f3ef659ed9c08919c983bd825e20168c9ef412c3bf166e805599572f0c26c754ae1992a94ab280ead82cd11fdccbccc04aa7a2b916781c0b34fd89aeccd781a2eb34cb1ba3ffbea61eb2b81602eace9d559f33e51b24dcc58f6b47c77879a4a4768e54ad7de8285af3613530d70e797851afd9c6583eaa7fdafdc81f36db100385cdb372cacd39bcf371dc692962945261f83"
-      }
+      "getDocuments": [
+        {
+          "action": "goToUrl",
+          "url": "https://accounts.hetzner.com/invoice"
+        },
+        {
+          "action": "forEach",
+          "id": "invoice-links-loop",
+          "on": {
+            "querySelector": "a.btn.btn-black.btn-xs.btn-download[href$=\"/pdf\"]"
+          },
+          "steps": [
+            {
+              "action": "appendUrl",
+              "outputVariable": "new_pdfs"
+            },
+            {
+              "action": "mergeVariables",
+              "inputVariable": "new_pdfs",
+              "outputVariable": "all_pdfs"
+            }
+          ]
+        },
+        {
+          "action": "downloadPdfsFromUrls",
+          "inputVariable": "all_pdfs"
+        }
+      ]
     }
   }
 }
