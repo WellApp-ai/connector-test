@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "mcpVersion": "mcp-browser-openai-4.1",
+    "created_at": "2025-08-26T19:11:24.631Z",
+    "updated_at": "2025-08-26T19:11:24.631Z",
+    "country": [
+      "FR"
+    ]
+  },
+  "data": {
+    "type": "blueprint",
+    "id": "4fc1b0e2-c1a9-43dd-9dea-c5b1aa726b08",
+    "attributes": {
+      "flow": {
+        "getDocuments": [
+          {
+            "id": "loop-1756235467868",
+            "on": {
+              "querySelector": "a[data-e2e^=\"bh-bill-iconPdf\"]"
+            },
+            "steps": [
+              {
+                "action": "startListenNetwork"
+              },
+              {
+                "action": "waitForNetworkIdle"
+              },
+              {
+                "action": "click"
+              },
+              {
+                "action": "findPdfInNetwork"
+              },
+              {
+                "action": "waitForNetworkIdle"
+              },
+              {
+                "action": "goBack"
+              }
+            ],
+            "action": "forEach"
+          },
+          {
+            "action": "downloadPdfsFromUrls",
+            "inputVariable": "all_pdfs"
+          },
+          {
+            "action": "checkInvoicePagination",
+            "querySelector": "button[data-e2e=\"bh-more-bills\"]"
+          }
+        ]
+      }
+    }
+  }
+}
