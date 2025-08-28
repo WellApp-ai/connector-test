@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "mcpVersion": "mcp-browser-openai-4o-v1",
+    "created_at": "2025-07-10T12:40:56.873Z",
+    "updated_at": "2025-07-10T12:40:56.873Z",
+    "country": [
+      "FR"
+    ]
+  },
+  "data": {
+    "type": "blueprint",
+    "id": "146eb210-a96a-403c-af13-42ea9b198124",
+    "attributes": [
+      {
+        "action": "goToUrl",
+        "url": "https://espace-client-red.sfr.fr/facture-fixe/consultation"
+      },
+      {
+        "action": "waitForNetworkIdle"
+      },
+      {
+        "action": "forEach",
+        "id": "invoice-links-loop",
+        "on": {
+          "querySelector": ".sr-download-wrapper a[href]"
+        },
+        "steps": [
+          {
+            "action": "getPdf",
+            "outputVariable": "new_pdfs"
+          },
+          {
+            "action": "mergeVariables",
+            "inputVariable": "new_pdfs",
+            "outputVariable": "all_pdfs"
+          }
+        ]
+      },
+      {
+        "action": "downloadPdfsFromUrls",
+        "inputVariable": "all_pdfs"
+      }
+    ]
+  }
+}
