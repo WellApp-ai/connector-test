@@ -11,36 +11,38 @@
   "data": {
     "type": "blueprint",
     "id": "146eb210-a96a-403c-af13-42ea9b198124",
-    "attributes": [
-      {
-        "action": "goToUrl",
-        "url": "https://espace-client-red.sfr.fr/facture-fixe/consultation"
-      },
-      {
-        "action": "waitForNetworkIdle"
-      },
-      {
-        "action": "forEach",
-        "id": "invoice-links-loop",
-        "on": {
-          "querySelector": ".sr-download-wrapper a[href]"
+    "attributes": {
+      "getDocuments": [
+        {
+          "action": "goToUrl",
+          "url": "https://espace-client-red.sfr.fr/facture-fixe/consultation"
         },
-        "steps": [
-          {
-            "action": "getPdf",
-            "outputVariable": "new_pdfs"
+        {
+          "action": "waitForNetworkIdle"
+        },
+        {
+          "action": "forEach",
+          "id": "invoice-links-loop",
+          "on": {
+            "querySelector": ".sr-download-wrapper a[href]"
           },
-          {
-            "action": "mergeVariables",
-            "inputVariable": "new_pdfs",
-            "outputVariable": "all_pdfs"
-          }
-        ]
-      },
-      {
-        "action": "downloadPdfsFromUrls",
-        "inputVariable": "all_pdfs"
-      }
-    ]
+          "steps": [
+            {
+              "action": "getPdf",
+              "outputVariable": "new_pdfs"
+            },
+            {
+              "action": "mergeVariables",
+              "inputVariable": "new_pdfs",
+              "outputVariable": "all_pdfs"
+            }
+          ]
+        },
+        {
+          "action": "downloadPdfsFromUrls",
+          "inputVariable": "all_pdfs"
+        }
+      ]
+    }
   }
 }
