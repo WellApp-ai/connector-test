@@ -15,7 +15,7 @@
       "getDocuments": [
         {
           "action": "goToUrl",
-          "url": "https://payments.google.com/gp/w/u/1/home/activity"
+          "url": "https://payments.google.com/gp/w/u/0/home/activity"
         },
         {
           "action": "goToIframeUrl",
